@@ -1,0 +1,7 @@
+.shapdow{
+box-shadow: 0 4px 8px 0 rgb(0, 93, 167), 0 16px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.shapdow:hover {
+    transform: scale(1);  /* Scales the element */
+    box-shadow: 0 4px 12px rgba(255, 21, 21, 0.2);  /* Adds shadow on hover */
+}

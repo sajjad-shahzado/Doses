@@ -1,0 +1,65 @@
+h1:hover {
+    color: #005da7;
+    transform: scale(1.1);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .updatesSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .updateCard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%;
+    transition: transform 0.3s ease;
+  }
+  
+  .updateCard:hover {
+    transform: translateY(-10px);
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cardContent {
+    padding: 15px;
+  }
+  
+  .cardHeading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .cardParagraph {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 1024px) {
+    .updateCard {
+      width: 45%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .updateCard {
+      width: 100%;
+    }
+  }
+  

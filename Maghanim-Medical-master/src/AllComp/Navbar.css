@@ -1,0 +1,36 @@
+.navii {
+    position: sticky;
+    top: 0;
+    
+    
+    
+  }
+
+
+  .App {
+    .navii{
+     
+      @media (max-width: 768px) {
+        margin-bottom: 100px;/* Adjust based on the height of your navbar */
+        padding-top: 0;
+      }
+    }
+  }
+
+  
+  .items:hover {
+    text-decoration: underline;
+    /* color: #005da7;                      
+    font-weight: bold;
+    text-decoration-color: #005da7;             
+    box-shadow: #005da7 0px 25px 20px -20px; */
+}
+  
+  
+
+  
+
+
+
+
+ 
