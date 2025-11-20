@@ -1,111 +1,81 @@
 import React from "react";
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// External Libraries
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
+// Custom Components
+import Navbar from './AllComp/Navbar';
+import Home from './AllComp/Home';
+import Aboutus from './AllComp/Aboutus';
+import Clients from './AllComp/Clients';
+import Services from './AllComp/Services';
+import Projects from './AllComp/Projects';
+import Contactus from './AllComp/Contactus';
+import Footer from './AllComp/Footer';
+import Form from "./AllComp/Form";
 
+// App Wrapper
 function App() {
-
-  const message = "A new update is available. Your current package version is outdated. Please update to the latest version for the best performance.";
-
-
-
-  const containerStyle = {
-
-    display: "flex",
-
-    justifyContent: "center",
-
-    alignItems: "center",
-
-    height: "100vh",
-
-    backgroundColor: "#f8f9fa",
-
-    fontFamily: "Arial, sans-serif",
-
-  };
-
-
-
-  const boxStyle = {
-
-    backgroundColor: "#fff3cd",
-
-    color: "#856404",
-
-    padding: "20px 30px",
-
-    borderRadius: "8px",
-
-    border: "1px solid #ffeeba",
-
-    boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
-
-    textAlign: "center",
-
-    maxWidth: "500px",
-
-  };
-
-
-
-  const titleStyle = {
-
-    fontSize: "20px",
-
-    fontWeight: "bold",
-
-    marginBottom: "10px",
-
-  };
-
-
-
-  const buttonStyle = {
-
-    marginTop: "15px",
-
-    padding: "10px 20px",
-
-    border: "none",
-
-    borderRadius: "5px",
-
-    backgroundColor: "#007bff",
-
-    color: "white",
-
-    cursor: "pointer",
-
-    fontSize: "15px",
-
-  };
-
-
-
   return (
+    <div className="App">
+      {/* Top Navigation Bar */}
+      <Navbar />
 
-    <div style={containerStyle}>
+      {/* Router for main pages */}
+      <Router>
+        <Routes>
+          {/* Landing/Home Page */}
+          <Route path="/" element={<Home />} />
 
-      <div style={boxStyle}>
+          {/* Individual Pages */}
+          <Route path="/projects-only" element={<Projects />} />
+          <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact-us" element={<Contactus />} />
+          <Route path="/form" element={<Form />} />
 
-        <div style={titleStyle}>⚠️ System Update Required</div>
+          {/* Custom Route: Example error (404) page */}
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </Router>
 
-        <p>{message}</p>
+      {/* Main site sections (these are outside router, so always render) */}
+      <section>
+        {/* Client Section */}
+        <Clients />
 
-        <button style={buttonStyle} onClick={() => alert("Updating packages...")}>
+        {/* Services Section */}
+        <Services />
 
-          Update Now
+        {/* About Us Section */}
+        <Aboutus />
 
-        </button>
+        {/* Contact Us Section */}
+        <Contactus />
 
-      </div>
+        {/* Main Form Section */}
+        <Form />
+      </section>
 
+      {/* Footer (always shown) */}
+      <Footer />
+
+      {/* Extra spacing for layout/visual separation */}
+      <div style={{ marginBottom: "40px" }}></div>
     </div>
-
   );
-
 }
 
-
+// If you had any global context, add provider here
+// Example:
+// import { AppProvider } from './context/AppContext';
+// Wrap <AppProvider> around main <App /> if needed
 
 export default App;
+
+// --- End of file (99 lines) ---
